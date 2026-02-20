@@ -32,7 +32,7 @@
                 </a>
               </li>
       
-              {{-- <li class="treeview">
+              <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Type OPD</span>
@@ -52,7 +52,7 @@
                 </ul>
               </li>
 
-               <li class="treeview">
+               {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Type OPD</span>
@@ -70,10 +70,10 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
               
-               <li class="treeview">
+               {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Reports</span>
@@ -87,9 +87,9 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
-                   <li class="treeview">
+                   {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">X ray </span>
@@ -109,9 +109,9 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
-                  <li class="treeview">
+                  {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">EEG</span>
@@ -131,9 +131,9 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
-                      <li class="treeview">
+                      {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">ICO</span>
@@ -153,10 +153,10 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
 
-                      <li class="treeview">
+                      {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Lab</span>
@@ -176,9 +176,9 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
-                             <li class="treeview">
+                             {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Ward</span>
@@ -198,9 +198,9 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
-                                <li class="treeview">
+                                {{-- <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
                   <span class="menu-text">Pro</span>
@@ -220,8 +220,10 @@
                 
                  
                 </ul>
-              </li>
+              </li> --}}
 
+
+{{-- 
                                        <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
@@ -242,8 +244,8 @@
                 
                  
                 </ul>
-              </li>
-               --}}
+              </li> --}}
+              
 
             
                 

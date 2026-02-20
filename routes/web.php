@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\googlecontroller;
+use App\Http\Controllers\OPDController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +41,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/store', [AdminController::class, 'ProfileStore'])->name('profile.store');
     Route::post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
  
+});
+
+Route::controller(OPDController::class)->group(function () {
+    Route::get('/opd/all', 'AllOPD')->name('all.opd');
+    Route::get('/opd/add', 'AddOPD')->name('add.opd');
+    Route::post('/opd/store', 'StoreOPD')->name('store.opd');
+    Route::get('/opd/edit/{id}', 'EditOPD')->name('edit.opd');
+    Route::post('/opd/update', 'UpdateOPD')->name('update.opd');
+    Route::get('/opd/delete/{id}', 'DeleteOPD')->name('delete.opd');
 });
