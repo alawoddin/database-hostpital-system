@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EEGController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\ProfileController;
@@ -50,4 +51,13 @@ Route::controller(OPDController::class)->group(function () {
     Route::get('/opd/edit/{id}', 'EditOPD')->name('edit.opd');
     Route::post('/opd/update', 'UpdateOPD')->name('update.opd');
     Route::get('/opd/delete/{id}', 'DeleteOPD')->name('delete.opd');
+});
+
+Route::controller(EEGController::class)->group(function () {
+    Route::get('/eeg/all', 'AllEEG')->name('all.eeg');
+    Route::get('/eeg/add', 'AddEEG')->name('add.eeg');
+    Route::post('/eeg/store', 'StoreEEG')->name('store.eeg');
+    Route::get('/eeg/edit/{id}', 'EditEEG')->name('edit.eeg');
+    Route::post('/eeg/update', 'UpdateEEG')->name('update.eeg');
+    Route::get('/eeg/delete/{id}', 'DeleteEEG')->name('delete.eeg');
 });
