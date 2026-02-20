@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/fonts/bootstrap/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/main.min.css')}}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
     <!-- *************
 			************ Vendor Css Files *************
 		************ -->
@@ -89,6 +92,9 @@
     <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
 
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+ <script src="{{ asset('backend/assets/js/code.js') }}"></script>
 
 <script>
  @if(Session::has('message'))

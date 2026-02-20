@@ -1,196 +1,254 @@
 @extends('admin.admin_master')
 @section('admin')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="content">
 
-    <!-- Start Content-->
-    <div class="container-xxl">
-        <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
-            <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Profile</h4>
-            </div>
+    <div class="app-body">
 
-            <div class="text-end">
-                <ol class="breadcrumb m-0 py-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Components</a></li>
-                    <li class="breadcrumb-item active">Profile</li>
-                </ol>
+        <!-- Row start -->
+        <div class="row gx-4">
+            <div class="col-sm-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <!-- Tabs starts -->
+                        <ul class="nav nav-pills mb-3 gap-1" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-pill active " id="pills-a-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-a" type="button" role="tab" aria-controls="pills-a"
+                                    aria-selected="true">General</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link rounded-pill" id="pills-c-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-c" type="button" role="tab" aria-controls="pills-c"
+                                    aria-selected="false">Billing</button>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-a" role="tabpanel"
+                                aria-labelledby="pills-a-tab" tabindex="0">
+
+                                <!-- Row start -->
+                                <div class="row gx-4">
+                                    <div class="col-xxl-9 col-sm-12">
+                                        <div class="border rounded-2 p-3 mb-3">
+                                            <form action="{{ route('profile.store') }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <!-- Row start -->
+                                                <div class="row gx-4">
+                                                    <div class="col-xxl-3 col-sm-4">
+                                                        <div class="mb-2">
+                                                            <img id="showImage"
+                                                                src="{{ !empty($profileData->photo) ? url('upload/user_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
+                                                                class=" avatar-xl img-thumbnail float-start"
+                                                                alt="image profile">
+
+                                                        </div>
+                                                        <label class="form-label">Profile Image</label>
+                                                        <input class="form-control" type="file" name="photo"
+                                                            id="image">
+                                                        <div class="form-text">
+                                                            Max file size 1MB
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-9 col-sm-8">
+
+                                                        <div class="mb-4 bg-primary-subtle text-primary p-2 rounded-2">
+                                                            <h6 class="m-0">Update Your Details</h6>
+                                                        </div>
+
+                                                        <!-- Row start -->
+                                                        <div class="row gx-4">
+                                                            <div class="col-sm-6">
+
+                                                                <div class="mb-3">
+                                                                    <label for="displayName" class="form-label">Display
+                                                                        Name</label>
+                                                                    <input class="form-control" type="text"
+                                                                        name="name" value="{{ $profileData->name }}">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="yourEmail" class="form-label">Email</label>
+                                                                    <input class="form-control" type="email"
+                                                                        name="email" value="{{ $profileData->email }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-3">
+                                                                    <label for="fullName" class="form-label">Address</label>
+                                                                    <input name="address" class="form-control"
+                                                                        placeholder="Add your address"
+                                                                        value="{{ $profileData->address }}">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="yourPhone" class="form-label">Phone
+                                                                        Number</label>
+                                                                    <input class="form-control" type="text"
+                                                                        name="phone" value="{{ $profileData->phone }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="d-flex justify-content-end gap-1">
+                                                                    <button class="btn btn-danger"
+                                                                        type="button">Reset</button>
+                                                                    <button class="btn btn-primary" type="submit">Update
+                                                                        Profile
+
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Row end -->
+
+                                                    </div>
+                                                </div>
+                                                <!-- Row end -->
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-sm-12">
+                                        <div class="border rounded-2 p-3 mb-3">
+                                            <div class="mb-4 bg-light-subtle p-2 rounded-2">
+                                                <h6 class="m-0">Link Accounts</h6>
+                                            </div>
+                                            <div class="d-grid gap-3">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="{{ asset('backend/assets/images/social/facebook.svg') }}"
+                                                        class="img-2x" alt="Admin Templates">
+                                                    <span>Facebook</span>
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary btn-sm rounded-pill ms-auto">Connect</button>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="{{ asset('backend/assets/images/social/x.svg') }}"
+                                                        class="img-2x" alt="Admin Templates">
+                                                    <span>X</span>
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary btn-sm rounded-pill ms-auto">Connect</button>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="{{ asset('backend/assets/images/social/google.svg') }}"
+                                                        class="img-2x" alt="Admin Templates">
+                                                    <span>Google</span>
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary btn-sm rounded-pill ms-auto">Connect</button>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="{{ asset('backend/assets/images/social/github.svg') }}"
+                                                        class="img-2x" alt="Admin Templates">
+                                                    <span>Github</span>
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary btn-sm rounded-pill ms-auto">Connect</button>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="{{ asset('backend/assets/images/social/instagram.svg') }}"
+                                                        class="img-2x" alt="Admin Templates">
+                                                    <span>Instagram</span>
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary btn-sm rounded-pill ms-auto">Connect</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row end -->
+
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-c" role="tabpanel" aria-labelledby="pills-c-tab"
+                                tabindex="0">
+
+                                <!-- Row start -->
+                                <div class="row gx-4">
+                                    <div class="col-sm-12">
+                                        <div class="border rounded-2 p-3 mb-3">
+                                            <div class="mb-4 bg-primary-subtle p-2 rounded-2">
+                                                You can upgrade and downgrade whenever you want.
+                                            </div>
+
+                                            <!-- Row start -->
+                                            <div class="row gx-4 justify-content-center mb-5">
+                                                <div class="col-xl-3 col-sm-4">
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex border border-3 rounded-3 p-3 position-relative">
+                                                        <div class="d-grid gap-3">
+                                                            <i class="bi bi-star text-primary fs-3"></i>
+                                                            <h3 class="m-0 fw-bold">$3.00/<small
+                                                                    class="fw-normal text-secondary">mo</small>
+                                                            </h3>
+                                                            <h6 class="m-0 text-uppercase">Basic</h6>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4">
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex border border-primary border-3 rounded-3 p-3 position-relative">
+                                                        <div class="ribbon-2-end">Selected</div>
+                                                        <div class="d-grid gap-3">
+                                                            <i class="bi bi-star-half text-primary fs-3"></i>
+                                                            <h3 class="m-0 fw-bold">$9.99/<small
+                                                                    class="fw-normal text-secondary">mo</small>
+                                                            </h3>
+                                                            <h6 class="m-0 text-uppercase">Standard</h6>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4">
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex border border-3 rounded-3 p-3 position-relative">
+                                                        <div class="d-grid gap-3">
+                                                            <i class="bi bi-star-fill text-primary fs-3"></i>
+                                                            <h3 class="m-0 fw-bold">$19.00/<small
+                                                                    class="fw-normal text-secondary">mo</small>
+                                                            </h3>
+                                                            <h6 class="m-0 text-uppercase">Business</h6>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Row end -->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row end -->
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <!-- Tabs ends -->
+
+                </div>
             </div>
         </div>
-
-         
-
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-
-<div class="card-body">
-
-    <div class="align-items-center">
-        <div class="d-flex align-items-center">
-            <img src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
-
-    <div class="overflow-hidden ms-4">
-        <h4 class="m-0 text-dark fs-20">{{ $profileData->name }}</h4>
-        <p class="my-1 text-muted fs-16">{{ $profileData->email }}</p>
-            
     </div>
-        </div>
-    </div> 
+    <!-- Row end -->
 
 
-<div class="tab-pane pt-4" id="profile_setting" role="tabpanel">
-    <div class="row">
-
-<div class="row">
-    <div class="col-lg-6 col-xl-6">
-        <div class="card border mb-0">
-
-            <div class="card-header">
-                <div class="row align-items-center">
-                    <div class="col">                      
-                        <h4 class="card-title mb-0">Personal Information</h4>                      
-                    </div><!--end col-->                                                       
-                </div>
-            </div>
-
-   <div class="card-body">
-
-    <form action="{{ route('profile.store') }}" method="post" enctype="multipart/form-data">
-     @csrf
-                
-                <div class="form-group mb-3 row">
-                    <label class="form-label">Name</label>
-                    <div class="col-lg-12 col-xl-12">
-           <input class="form-control" type="text" name="name" value="{{ $profileData->name }}">
-                    </div>
-                </div>
-
-                <div class="form-group mb-3 row">
-                    <label class="form-label">Email</label>
-                    <div class="col-lg-12 col-xl-12">
-           <input class="form-control" type="email" name="email" value="{{ $profileData->email }}">
-                    </div>
-                </div>
-
-                <div class="form-group mb-3 row">
-                    <label class="form-label">Phone</label>
-                    <div class="col-lg-12 col-xl-12">
-           <input class="form-control" type="text" name="phone" value="{{ $profileData->phone }}">
-                    </div>
-                </div>
-
-                <div class="form-group mb-3 row">
-                    <label class="form-label">Address</label>
-                    <div class="col-lg-12 col-xl-12">
-       <textarea name="address" class="form-control" placeholder="Add your address">{{ $profileData->address }}</textarea>
-                    </div>
-                </div>
-
-       <div class="form-group mb-3 row">
-            <label class="form-label">Profile Image</label>
-            <div class="col-lg-12 col-xl-12">
-    <input class="form-control" type="file" name="photo" id="image"  >
-            </div>
-        </div> 
-        
-        <div class="form-group mb-3 row">
-            <label class="form-label"> </label>
-            <div class="col-lg-12 col-xl-12">
-                <img id="showImage" src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl img-thumbnail float-start" alt="image profile">
-            </div>
-        </div> 
-
-        <div class="col-lg-12 col-xl-12">
-            <button type="submit" class="btn btn-primary">Save Changes</button> 
-        </div>
- 
-    </form>
-
-            </div><!--end card-body-->
-        </div>
-    </div>
-
-    <div class="col-lg-6 col-xl-6">
-        <div class="card border mb-0">
-
-            <div class="card-header">
-                <div class="row align-items-center">
-                    <div class="col">                      
-                        <h4 class="card-title mb-0">Change Password</h4>                      
-                    </div><!--end col-->                                                       
-                </div>
-            </div>
-
-            <div class="card-body mb-0">
-    <form action="{{ route('admin.password.update') }}" method="post" enctype="multipart/form-data">
-      @csrf
-
-        <div class="form-group mb-3 row">
-            <label class="form-label">Old Password</label>
-            <div class="col-lg-12 col-xl-12">
-      <input class="form-control @error('old_password') is-invalid          
-      @enderror" name="old_password" id="old_password" type="password" placeholder="Old Password">
-      @error('old_password')
-          <span class="text-danger">{{ $message }}</span>
-      @enderror
-            </div>
-        </div>
-        <div class="form-group mb-3 row">
-            <label class="form-label">New Password</label>
-            <div class="col-lg-12 col-xl-12">
-  <input class="form-control @error('new_password') is-invalid          
-                @enderror" name="new_password" id="new_password" type="password" placeholder="New Password">
-                @error('new_password')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-                      </div>
-        </div>
-        <div class="form-group mb-3 row">
-            <label class="form-label">Confirm Password</label>
-            <div class="col-lg-12 col-xl-12">
-                <input class="form-control" name="new_password_confirmation" type="password" id="new_password_confirmation" placeholder="New Password Confirmation "> 
-                 </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-lg-12 col-xl-12">
-                <button type="submit" class="btn btn-primary">Change Password</button>
-                <button type="button" class="btn btn-danger">Cancel</button>
-            </div>
-        </div>
-    </form>
-            </div><!--end card-body-->
-        </div>
-    </div>
-
-</div>
-    </div>
-</div> <!-- end education -->
-
-                        <!-- Tab panes -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> 
-    <!-- container-fluid -->
-</div> 
 
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(e.target.files['0']);
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
         })
-    })
-
-</script>
-
+    </script>
 @endsection

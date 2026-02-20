@@ -86,19 +86,12 @@
                                 </button>
                             </div>
                             <div class="text-center py-3">or Login with</div>
-                            <div class="d-flex gap-2 justify-content-center">
-                                <button type="submit" class="btn btn-outline-danger">
-                                    <i class="bi bi-google"></i>
-                                </button>
-                                <button type="submit" class="btn btn-outline-info">
-                                    <i class="bi bi-facebook"></i>
-                                </button>
-                            </div>
-                            <div class="text-center pt-4">
+                         
+                            {{-- <div class="text-center pt-4">
                                 <span>Not registered?</span>
                                 <a href="{{ route('register') }}" class="text-blue text-decoration-underline ms-2">
                                     SignUp</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </form>

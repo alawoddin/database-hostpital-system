@@ -135,18 +135,23 @@
               </div>
               <!-- Header stats ends -->
 
+                  @php
+                          $id = Auth::user()->id;
+                          $profileData = App\Models\User::find($id);
+                      @endphp
+
               <!-- Header settings starts -->
               <div class="dropdown ms-3">
                 <a id="userSettings" class="dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{{ asset('backend/assets/images/user.png') }}" class="profile-avatar" alt="Bootstrap Gallery">
+                  <img src="{{ !empty($profileData->photo) ? url('upload/user_images/' . $profileData->photo) : url('upload/no_image.jpg') }}" class="profile-avatar" alt="Bootstrap Gallery">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end shadow">
-                  <a class="dropdown-item d-flex align-items-center" href="profile.html"><i
+                  <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profile') }}"><i
                       class="bi bi-person fs-4 me-2"></i>Profile</a>
                   <a class="dropdown-item d-flex align-items-center" href="settings.html"><i
                       class="bi bi-gear fs-4 me-2"></i>Account Settings</a>
-                  <a class="dropdown-item d-flex align-items-center" href="login.html"><i
+                  <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.logout') }}"><i
                       class="bi bi-escape fs-4 me-2"></i>Logout</a>
                 </div>
               </div>
@@ -168,22 +173,32 @@
               </li>
               <li class="breadcrumb-item" aria-current="page">Dashboard</li>
             </ol>
+
             <!-- Breadcrumb end -->
+
+            {{-- @php
+              
+              $Patients = App\Models\Patient::count();
+
+
+$total = App\Models\Patient::sum('grand_total');
+
+            @endphp --}}
 
             <!-- Sales stats starts -->
             <div class="ms-auto d-lg-flex d-none gap-4">
               <div class="d-flex align-items-center">
                 <div id="orders" class="me-3"></div>
                 <div>
-                  <h3 class="m-0">6900</h3>
-                  <h6 class="m-0">Orders</h6>
+                  {{-- <h3 class="m-0">{{$Patients}}</h3> --}}
+                  <h6 class="m-0">All OPD</h6>
                 </div>
               </div>
               <div class="d-flex align-items-center">
                 <div id="sales" class="me-3"></div>
                 <div>
-                  <h3 class="m-0">9800</h3>
-                  <h6 class="m-0">Sales</h6>
+                  {{-- <h3 class="m-0">{{$total}}</h3> --}}
+                  <h6 class="m-0">Patient Fee</h6>
                 </div>
               </div>
             </div>
