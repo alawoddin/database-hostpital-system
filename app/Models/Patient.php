@@ -8,5 +8,8 @@ class Patient extends Model
 {
     protected $guarded = [];
 
+    function visits() {
+        return $this->hasMany(Visit::class);
+    }
 
 }

@@ -3,18 +3,16 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EEGController;
-use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\visitController;
 use App\Http\Controllers\WardController;
 use App\Http\Controllers\XrayController;
-use App\Models\ICU;
-use App\Models\Patient;
-use App\Models\Xray;
+
 use Illuminate\Support\Facades\Route;
 
 use function Pest\Laravel\get;
@@ -43,9 +41,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 
-//google login
-Route::get('/google/redirect' , [googlecontroller::class , 'index'])->name('google.redirect');
-Route::get('/google/callback' , [googlecontroller::class , 'verify']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
@@ -134,4 +129,13 @@ Route::controller(PatientController::class)->group(function () {
     Route::get('/patient/edit/{id}', 'EditPatient')->name('edit.patient');
     Route::post('/patient/update', 'UpdatePatient')->name('update.patient');
     Route::get('/patient/delete/{id}', 'DeletePatient')->name('delete.patient');
+});
+
+Route::controller(visitController::class)->group(function () {
+    Route::get('/visit/all', 'AllVisit')->name('all.visit');
+    Route::get('/visit/add', 'AddVisit')->name('add.visit');
+    Route::post('/visit/store', 'StoreVisit')->name('store.visit');
+    Route::get('/visit/edit/{id}', 'EditVisit')->name('edit.visit');
+    Route::post('/visit/update', 'UpdateVisit')->name('update.visit');
+    Route::get('/visit/delete/{id}', 'DeleteVisit')->name('delete.visit');
 });
