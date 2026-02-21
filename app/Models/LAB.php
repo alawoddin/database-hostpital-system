@@ -23,7 +23,7 @@ class LAB extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'LAB' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'L' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

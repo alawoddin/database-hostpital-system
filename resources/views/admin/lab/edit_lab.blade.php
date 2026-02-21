@@ -3,13 +3,20 @@
 @section('admin')
 
 <div class="app-body">
-    <hr/>
 
-    <div class="title">
-        <h1 class="title-header">Edit LAB</h1>
-    </div>
+        <div class="row gx-3">
+            <div class="col-sm-12">
+                <div class="card mb-3">
 
-    <hr/>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Default</h5>
+
+                    </div>
+
+
+
+
+  
 
     <!-- Row starts -->
     <form action="{{ route('update.lab') }}" method="POST">
@@ -38,12 +45,16 @@
         </div>
 
         <!-- Store Button -->
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary mb-3 ms-3">
             Update
         </button>
     </form>
     <!-- Row ends -->
 
 </div>
+
+            </div>
+            </div>
+            </div>
 
 @endsection

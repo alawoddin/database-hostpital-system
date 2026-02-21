@@ -23,7 +23,7 @@ class Procedure extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'PRO' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'P' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

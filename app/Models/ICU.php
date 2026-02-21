@@ -23,7 +23,7 @@ class ICU extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'ICU' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'I' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

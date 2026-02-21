@@ -23,7 +23,7 @@ class Xray extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'XRAY' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'X' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

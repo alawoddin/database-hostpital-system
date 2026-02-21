@@ -4,7 +4,7 @@
 
 
 <div class="app-body">
-    <hr />
+
 
     <div class="row gx-3">
         <div class="col-sm-12">

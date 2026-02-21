@@ -23,7 +23,7 @@ class OPD extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'OPD' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'O' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

@@ -23,7 +23,7 @@ class Consultation extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'CON' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'C' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }

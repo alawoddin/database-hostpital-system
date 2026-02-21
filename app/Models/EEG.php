@@ -23,7 +23,7 @@ class EEG extends Model
                 $number = $lastNumber + 1;
             }
 
-            $model->name = 'EEG' . str_pad($number, 3, '0', STR_PAD_LEFT);
+            $model->name = 'E' . str_pad($number, 3, '0', STR_PAD_LEFT);
         });
 
     }
