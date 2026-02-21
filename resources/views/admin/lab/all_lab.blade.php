@@ -13,7 +13,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Default</h5>
 
-                    <a href="{{ route('add.opd') }}" class="btn btn-primary btn-sm">
+                    <a href="{{ route('add.lab') }}" class="btn btn-primary btn-sm">
                         <i class="bi bi-plus-lg"></i> Add LAB
                     </a>
                 </div>

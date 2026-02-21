@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ICUController extends Controller
 {
     public function AllICU(){
-        $icus = ICU::latest()->get();
+        $icus = ICU::all();
         return view('admin.icu.all_icu', compact('icus'));
     }
 

@@ -9,7 +9,7 @@ class LabController extends Controller
 {
     public function AllLAB()
     {
-        $labs = LAB::latest()->get();
+        $labs = LAB::all();
         return view('admin.lab.all_lab', compact('labs'));
     }
 

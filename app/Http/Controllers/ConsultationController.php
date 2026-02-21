@@ -10,7 +10,7 @@ class ConsultationController extends Controller
     public function AllConsultation()
 
     {
-        $alldata = Consultation::latest()->get();
+        $alldata = Consultation::all();
         return view('admin.consultation.all_consultation' , compact('alldata'));
     }
 

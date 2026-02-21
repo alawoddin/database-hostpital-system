@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class OPDController extends Controller
 {
     Public function AllOPD(){
-        $opds = OPD::latest()->get();
+        $opds = OPD::all();
         return view('admin.opd.all_opd', compact('opds'));
     }
 

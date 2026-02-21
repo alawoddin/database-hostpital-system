@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WardController extends Controller
 {
     public function AllWard(){
-        $wards = Ward::latest()->get();
+        $wards = Ward::all();
         return view('admin.ward.all_ward', compact('wards'));
     }
 

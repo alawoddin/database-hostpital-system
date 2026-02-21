@@ -9,7 +9,7 @@ class EEGController extends Controller
 {
     public function AllEEG()
     {
-        $eegs = EEG::latest()->get();
+        $eegs = EEG::all();
         return view('admin.eeg.all_eeg', compact('eegs'));
     }
 

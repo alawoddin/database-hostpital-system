@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProcedureController extends Controller
 {
     public function AllProcedure() {
-        $procedure = Procedure::latest()->get();
+        $procedure = Procedure::all();
         return view('admin.procedure.all_procedure', compact('procedure'));
     }
     public function AddProcedure() {
