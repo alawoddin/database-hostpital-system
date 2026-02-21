@@ -173,171 +173,28 @@
                 </ul>
               </li>
 
-
-
-
-                   {{-- <li class="treeview">
+                <li class="treeview">
                 <a href="#!">
                   <i class="bi bi-stickies"></i>
-                  <span class="menu-text">X ray </span>
+                  <span class="menu-text">X Ray</span>
                 </a>
                 <ul class="treeview-menu">
 
-               
                     <li>
-                      <a href="{{ route('add.xray') }}">Add X ray</a>
-
+                    <a href="{{ route('add.xray') }}">Add X Ray</a>
                   </li>
 
                   <li>
-                    <a href="{{ route('all.xray') }}">All X ray</a>
+                    <a href="{{ route('all.xray') }}">All X Rays</a>
                   </li>
                 
                 
                  
                 </ul>
-              </li> --}}
-
-                  {{-- <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">EEG</span>
-                </a>
-                <ul class="treeview-menu">
-
-               
-                    <li>
-                      <a href="{{ route('add.eeg') }}">Add EEG</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.eeg') }}">All EEG</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
-
-                      {{-- <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">ICO</span>
-                </a>
-                <ul class="treeview-menu">
-
-               
-                    <li>
-                      <a href="{{ route('add.ico') }}">Add ICO</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.ico') }}">All ICO</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
+              </li>
 
 
-                      {{-- <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">Lab</span>
-                </a>
-                <ul class="treeview-menu">
 
-               
-                    <li>
-                      <a href="{{ route('add.lab') }}">Add Lab</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.lab') }}">All Lab</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
-
-                             {{-- <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">Ward</span>
-                </a>
-                <ul class="treeview-menu">
-
-               
-                    <li>
-                      <a href="{{ route('add.ward') }}">Add Ward</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.ward') }}">All Ward</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
-
-                                {{-- <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">Pro</span>
-                </a>
-                <ul class="treeview-menu">
-
-               
-                    <li>
-                      <a href="{{ route('add.procedure') }}">Add Procedure</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.procedure') }}">All Procedure</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
-
-
-{{-- 
-                                       <li class="treeview">
-                <a href="#!">
-                  <i class="bi bi-stickies"></i>
-                  <span class="menu-text">Consultation</span>
-                </a>
-                <ul class="treeview-menu">
-
-               
-                    <li>
-                      <a href="{{ route('add.consultation') }}">Add Consultation</a>
-
-                  </li>
-
-                  <li>
-                    <a href="{{ route('all.consultation') }}">All Consultation</a>
-                  </li>
-                
-                
-                 
-                </ul>
-              </li> --}}
-              
-
-            
-                
-
-       
 
             </ul>
           </div>

@@ -10,7 +10,9 @@ use App\Http\Controllers\OPDController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WardController;
+use App\Http\Controllers\XrayController;
 use App\Models\ICU;
+use App\Models\Xray;
 use Illuminate\Support\Facades\Route;
 
 use function Pest\Laravel\get;
@@ -112,4 +114,13 @@ Route::controller(ConsultationController::class)->group(function () {
     Route::get('/consultation/edit/{id}', 'EditConsultation')->name('edit.consultation');
     Route::post('/consultation/update', 'UpdateConsultation')->name('update.consultation');
     Route::get('/consultation/delete/{id}', 'DeleteConsultation')->name('delete.consultation');
+});
+
+Route::controller(XrayController::class)->group(function () {
+    Route::get('/xray/all', 'AllXray')->name('all.xray');
+    Route::get('/xray/add', 'AddXray')->name('add.xray');
+    Route::post('/xray/store', 'StoreXray')->name('store.xray');
+    Route::get('/xray/edit/{id}', 'EditXray')->name('edit.xray');
+    Route::post('/xray/update', 'UpdateXray')->name('update.xray');
+    Route::get('/xray/delete/{id}', 'DeleteXray')->name('delete.xray');
 });
