@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EEGController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ICUController;
@@ -102,4 +103,13 @@ Route::controller(ProcedureController::class)->group(function () {
     Route::get('/procedure/edit/{id}', 'EditProcedure')->name('edit.procedure');
     Route::post('/procedure/update', 'UpdateProcedure')->name('update.procedure');
     Route::get('/procedure/delete/{id}', 'DeleteProcedure')->name('delete.procedure');
+});
+
+Route::controller(ConsultationController::class)->group(function () {
+    Route::get('/consultation/all', 'AllConsultation')->name('all.consultation');
+    Route::get('/consultation/add', 'AddConsultation')->name('add.consultation');
+    Route::post('/consultation/store', 'StoreConsultation')->name('store.consultation');
+    Route::get('/consultation/edit/{id}', 'EditConsultation')->name('edit.consultation');
+    Route::post('/consultation/update', 'UpdateConsultation')->name('update.consultation');
+    Route::get('/consultation/delete/{id}', 'DeleteConsultation')->name('delete.consultation');
 });
