@@ -6,6 +6,7 @@ use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
+use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WardController;
 use App\Models\ICU;
@@ -92,4 +93,13 @@ Route::controller(WardController::class)->group(function () {
     Route::get('/ward/edit/{id}', 'EditWard')->name('edit.ward');
     Route::post('/ward/update', 'UpdateWard')->name('update.ward');
     Route::get('/ward/delete/{id}', 'DeleteWard')->name('delete.ward');
-});        
+});   
+
+Route::controller(ProcedureController::class)->group(function () {
+    Route::get('/procedure/all', 'AllProcedure')->name('all.procedure');
+    Route::get('/procedure/add', 'AddProcedure')->name('add.procedure');
+    Route::post('/procedure/store', 'StoreProcedure')->name('store.procedure');
+    Route::get('/procedure/edit/{id}', 'EditProcedure')->name('edit.procedure');
+    Route::post('/procedure/update', 'UpdateProcedure')->name('update.procedure');
+    Route::get('/procedure/delete/{id}', 'DeleteProcedure')->name('delete.procedure');
+});
