@@ -193,6 +193,27 @@
                 </ul>
               </li>
 
+                       <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-stickies"></i>
+                  <span class="menu-text"> patient</span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li>
+                    <a href="{{ route('add.patient') }}">Add  Patient</a>
+                  </li>
+
+                  <li>
+                    <a href="{{ route('all.patient') }}">All  Patients</a>
+                  </li>
+                
+                
+                 
+                </ul>
+              </li>
+
+
 
 
 

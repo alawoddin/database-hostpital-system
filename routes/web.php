@@ -7,11 +7,13 @@ use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WardController;
 use App\Http\Controllers\XrayController;
 use App\Models\ICU;
+use App\Models\Patient;
 use App\Models\Xray;
 use Illuminate\Support\Facades\Route;
 
@@ -123,4 +125,13 @@ Route::controller(XrayController::class)->group(function () {
     Route::get('/xray/edit/{id}', 'EditXray')->name('edit.xray');
     Route::post('/xray/update', 'UpdateXray')->name('update.xray');
     Route::get('/xray/delete/{id}', 'DeleteXray')->name('delete.xray');
+});
+
+Route::controller(PatientController::class)->group(function () {
+    Route::get('/patient/all', 'AllPatient')->name('all.patient');
+    Route::get('/patient/add', 'AddPatient')->name('add.patient');
+    Route::post('/patient/store', 'StorePatient')->name('store.patient');
+    Route::get('/patient/edit/{id}', 'EditPatient')->name('edit.patient');
+    Route::post('/patient/update', 'UpdatePatient')->name('update.patient');
+    Route::get('/patient/delete/{id}', 'DeletePatient')->name('delete.patient');
 });
