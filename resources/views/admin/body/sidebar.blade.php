@@ -33,10 +33,10 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text"> patient</span>
-                    </a>
+                   <a href="#!">
+    <i class="bi bi-person"></i>
+    <span class="menu-text">Patient</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -54,9 +54,9 @@
 
                 <li class="treeview">
                     <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text"> Visit</span>
-                    </a>
+    <i class="bi bi-clipboard"></i>
+    <span class="menu-text">Visit</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -75,9 +75,9 @@
 
                 <li class="treeview">
                     <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">Type OPD</span>
-                    </a>
+    <i class="bi bi-clipboard2-pulse"></i>
+    <span class="menu-text">Type OPD</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -94,10 +94,10 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">EEG</span>
-                    </a>
+                 <a href="#!">
+    <i class="bi bi-activity"></i>
+    <span class="menu-text">EEG</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -114,10 +114,10 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">ICU</span>
-                    </a>
+                   <a href="#!">
+    <i class="bi bi-heart-pulse"></i>
+    <span class="menu-text">ICU</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -135,9 +135,9 @@
 
                 <li class="treeview">
                     <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">LAB</span>
-                    </a>
+    <i class="bi bi-eyedropper"></i>
+    <span class="menu-text">LAB</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -154,10 +154,10 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">WARD</span>
-                    </a>
+                   <a href="#!">
+    <i class="bi bi-bed"></i>
+    <span class="menu-text">WARD</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -174,10 +174,10 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">Procedure</span>
-                    </a>
+                   <a href="#!">
+    <i class="bi bi-clipboard2-pulse"></i>
+    <span class="menu-text">Procedure</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -195,10 +195,10 @@
 
 
                 <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">Consultation</span>
-                    </a>
+                   <a href="#!">
+    <i class="bi bi-person-lines-fill"></i>
+    <span class="menu-text">Consultation</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -216,9 +216,9 @@
 
                 <li class="treeview">
                     <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text">X Ray</span>
-                    </a>
+    <i class="bi bi-image"></i>
+    <span class="menu-text">X Ray</span>
+</a>
                     <ul class="treeview-menu">
 
                         <li>
@@ -233,50 +233,6 @@
 
                     </ul>
                 </li>
-
-                <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text"> patient</span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li>
-                            <a href="{{ route('add.patient') }}">Add Patient</a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('all.patient') }}">All Patients</a>
-                        </li>
-
-
-
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#!">
-                        <i class="bi bi-stickies"></i>
-                        <span class="menu-text"> Visit</span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li>
-                            <a href="{{ route('add.visit') }}">Add Visit</a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('all.visit') }}">All Visits</a>
-                        </li>
-
-
-
-                    </ul>
-                </li>
-
-
-
-
 
 
             </ul>
