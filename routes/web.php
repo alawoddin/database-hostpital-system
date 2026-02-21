@@ -3,14 +3,17 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EEGController;
 use App\Http\Controllers\googlecontroller;
+use App\Http\Controllers\ICUController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\ProfileController;
+use App\Models\ICU;
 use Illuminate\Support\Facades\Route;
 
 use function Pest\Laravel\get;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -60,4 +63,22 @@ Route::controller(EEGController::class)->group(function () {
     Route::get('/eeg/edit/{id}', 'EditEEG')->name('edit.eeg');
     Route::post('/eeg/update', 'UpdateEEG')->name('update.eeg');
     Route::get('/eeg/delete/{id}', 'DeleteEEG')->name('delete.eeg');
+});
+
+Route::controller(ICUController::class)->group(function () {
+    Route::get('/icu/all', 'AllICU')->name('all.icu');
+    Route::get('/icu/add', 'AddICU')->name('add.icu');
+    Route::post('/icu/store', 'StoreICU')->name('store.icu');
+    Route::get('/icu/edit/{id}', 'EditICU')->name('edit.icu');
+    Route::post('/icu/update', 'UpdateICU')->name('update.icu');
+    Route::get('/icu/delete/{id}', 'DeleteICU')->name('delete.icu');
+});
+
+Route::controller(LabController::class)->group(function () {
+    Route::get('/lab/all', 'AllLab')->name('all.lab');
+    Route::get('/lab/add', 'AddLab')->name('add.lab');
+    Route::post('/lab/store', 'StoreLab')->name('store.lab');
+    Route::get('/lab/edit/{id}', 'EditLab')->name('edit.lab');
+    Route::post('/lab/update', 'UpdateLab')->name('update.lab');
+    Route::get('/lab/delete/{id}', 'DeleteLab')->name('delete.lab');
 });

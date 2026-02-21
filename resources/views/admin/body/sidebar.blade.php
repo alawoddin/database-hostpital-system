@@ -72,6 +72,46 @@
                 </ul>
               </li>
 
+                              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-stickies"></i>
+                  <span class="menu-text">ICU</span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li>
+                    <a href="{{ route('add.icu') }}">Add ICU</a>
+                  </li>
+
+                  <li>
+                    <a href="{{ route('all.icu') }}">All ICU</a>
+                  </li>
+                
+                
+                 
+                </ul>
+              </li>
+
+                                    <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-stickies"></i>
+                  <span class="menu-text">LAB</span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li>
+                    <a href="{{ route('add.lab') }}">Add LAB</a>
+                  </li>
+
+                  <li>
+                    <a href="{{ route('all.lab') }}">All LAB</a>
+                  </li>
+                
+                
+                 
+                </ul>
+              </li>
+
 
                {{-- <li class="treeview">
                 <a href="#!">
