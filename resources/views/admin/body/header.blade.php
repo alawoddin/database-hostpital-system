@@ -174,31 +174,20 @@
               <li class="breadcrumb-item" aria-current="page">Dashboard</li>
             </ol>
 
-            <!-- Breadcrumb end -->
 
-            {{-- @php
-              
-              $Patients = App\Models\Patient::count();
+            @php
+              $totalVisitNumbers = App\Models\Visit::sum('visit_number');
+            @endphp
 
-
-$total = App\Models\Patient::sum('grand_total');
-
-            @endphp --}}
+            
 
             <!-- Sales stats starts -->
             <div class="ms-auto d-lg-flex d-none gap-4">
-              <div class="d-flex align-items-center">
-                <div id="orders" class="me-3"></div>
-                <div>
-                  {{-- <h3 class="m-0">{{$Patients}}</h3> --}}
-                  <h6 class="m-0">All OPD</h6>
-                </div>
-              </div>
+           
               <div class="d-flex align-items-center">
                 <div id="sales" class="me-3"></div>
                 <div>
-                  {{-- <h3 class="m-0">{{$total}}</h3> --}}
-                  <h6 class="m-0">Patient Fee</h6>
+                  <h6 class="m-0">Patient {{ $totalVisitNumbers }}</h6>
                 </div>
               </div>
             </div>
