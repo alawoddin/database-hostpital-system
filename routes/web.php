@@ -7,6 +7,7 @@ use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WardController;
 use App\Models\ICU;
 use Illuminate\Support\Facades\Route;
 
@@ -82,3 +83,13 @@ Route::controller(LabController::class)->group(function () {
     Route::post('/lab/update', 'UpdateLab')->name('update.lab');
     Route::get('/lab/delete/{id}', 'DeleteLab')->name('delete.lab');
 });
+
+//
+Route::controller(WardController::class)->group(function () {
+    Route::get('/ward/all', 'AllWard')->name('all.ward');
+    Route::get('/ward/add', 'AddWard')->name('add.ward');
+    Route::post('/ward/store', 'StoreWard')->name('store.ward');
+    Route::get('/ward/edit/{id}', 'EditWard')->name('edit.ward');
+    Route::post('/ward/update', 'UpdateWard')->name('update.ward');
+    Route::get('/ward/delete/{id}', 'DeleteWard')->name('delete.ward');
+});        
