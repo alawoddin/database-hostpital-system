@@ -2,6 +2,9 @@
 
 @section('admin')
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
 
 <div class="app-body">
     <hr />
@@ -21,7 +24,7 @@
                 <div class="card-body">
                     <div class="table-outer">
                         <div class="table-responsive">
-                            <table class="table align-middle table-hover m-0 truncate">
+                             <table id="patientsTable" class="table align-middle table-hover m-0 truncate">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -57,4 +60,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#patientsTable').DataTable({
+            pageLength: 10,
+            ordering: true,
+            searching: true,
+            lengthChange: true,
+            columnDefs: [
+                { orderable: false, targets: 2 }
+            ]
+        });
+    });
+</script>
+
 @endsection

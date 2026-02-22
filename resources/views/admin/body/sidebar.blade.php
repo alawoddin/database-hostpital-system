@@ -237,7 +237,7 @@
                       <li class="treeview">
                     <a href="#!">
                         <i class="bi bi-eyedropper"></i>
-                        <span class="menu-text">Report</span>
+                        <span class="menu-text">Visit Report</span>
                     </a>
                     <ul class="treeview-menu">
 
