@@ -176,22 +176,39 @@
 
 
             @php
+
+            $lastMonthVisitNumbers = App\Models\Visit::whereMonth('created_at', now()->subMonth()->month)
+    ->whereYear('created_at', now()->subMonth()->year)
+    ->sum('visit_number');
+
+
+
               $totalVisitNumbers = App\Models\Visit::sum('visit_number');
             @endphp
 
             
 
-            <!-- Sales stats starts -->
-            <div class="ms-auto d-lg-flex d-none gap-4">
-           
-              <div class="d-flex align-items-center">
-                <div id="sales" class="me-3"></div>
-                <div>
-                  <h6 class="m-0">Patient {{ $totalVisitNumbers }}</h6>
-                </div>
-              </div>
-            </div>
-            <!-- Sales stats ends -->
+           <div class="ms-auto d-lg-flex d-none gap-4">
+
+    <!-- Last Month Visits -->
+    <div class="d-flex align-items-center">
+        <div id="orders" class="me-3"></div>
+        <div>
+            <h3 class="m-0">{{  $lastMonthVisitNumbers }}</h3>
+            <h6 class="m-0">Last Month Visit Number</h6>
+        </div>
+    </div>
+
+    <!-- Total Visits -->
+    <div class="d-flex align-items-center">
+        <div id="sales" class="me-3"></div>
+        <div>
+            <h3 class="m-0">{{ $totalVisitNumbers }}</h3>
+            <h6 class="m-0">Total Visit Number</h6>
+        </div>
+    </div>
+
+</div>
 
           </div>
           <!-- App Hero header ends -->
