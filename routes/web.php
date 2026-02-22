@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AllReportController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EEGController;
 use App\Http\Controllers\ICUController;
@@ -146,5 +147,12 @@ Route::controller(PatientReportController::class)->group(function () {
     Route::post('/admin/search/bydate', 'AdminSearchByDate')->name('search.by.date');
     Route::post('/search/by/month', 'SearchByMonth')->name('search.by.month');
     Route::post('/search/by/year', 'SearchByYear')->name('search.by.year');
+
+});
+
+Route::controller(AllReportController::class)->group(function () {
+    Route::get('/all/report', 'AllReport')->name('all.report');
+    Route::post('/search/bydate', 'SearchAllByDate')->name('search.all.by.date');
+   
 
 });

@@ -252,6 +252,25 @@
                     </ul>
                 </li>
 
+                        <li class="treeview">
+                    <a href="#!">
+                        <i class="bi bi-eyedropper"></i>
+                        <span class="menu-text">All Report</span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                       
+
+                        <li>
+                            <a href="{{ route('all.report') }}">All Reports</a>
+                        </li>
+
+
+
+                    </ul>
+                </li>
+
+
 
 
             </ul>
