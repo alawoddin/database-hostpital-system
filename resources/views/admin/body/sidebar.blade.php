@@ -234,6 +234,25 @@
                     </ul>
                 </li>
 
+                      <li class="treeview">
+                    <a href="#!">
+                        <i class="bi bi-eyedropper"></i>
+                        <span class="menu-text">Report</span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                       
+
+                        <li>
+                            <a href="{{ route('all.patient.report') }}">All Reports</a>
+                        </li>
+
+
+
+                    </ul>
+                </li>
+
+
 
             </ul>
         </div>

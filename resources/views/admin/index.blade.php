@@ -239,32 +239,4 @@
         </div>
         <!-- Row ends -->
 
-        <!-- Row starts -->
-        <div class="row">
-            <div class="col-xxl-9 col-xl-8 col-sm-12">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="card-title">Sales Report</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-height-xl overflow-hidden">
-                            <div id="salesReport"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-xl-4 col-sm-12">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="card-title">Visitors</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-height-xl overflow-hidden">
-                            <div id="visitors"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Row end -->
     @endsection

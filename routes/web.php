@@ -7,6 +7,7 @@ use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PatientReportController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\visitController;
@@ -138,4 +139,12 @@ Route::controller(visitController::class)->group(function () {
     Route::get('/visit/edit/{id}', 'EditVisit')->name('edit.visit');
     Route::post('/visit/update', 'UpdateVisit')->name('update.visit');
     Route::get('/visit/delete/{id}', 'DeleteVisit')->name('delete.visit');
+});
+
+Route::controller(PatientReportController::class)->group(function () {
+    Route::get('/patient/all/report', 'AllPatientReport')->name('all.patient.report');
+    Route::post('/admin/search/bydate', 'AdminSearchByDate')->name('search.by.date');
+    Route::post('/search/by/month', 'SearchByMonth')->name('search.by.month');
+    Route::post('/search/by/year', 'SearchByYear')->name('search.by.year');
+
 });
