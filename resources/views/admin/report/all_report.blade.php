@@ -43,7 +43,7 @@
 
 
                         <!-- Search By Month -->
-                        {{-- <div class="col-sm-4">
+                        <div class="col-sm-4">
                             <div class="card">
                                 <div class="card-body">
 
@@ -79,14 +79,15 @@
 
                                 </div>
                             </div>
-                        </div> --}}
+                        </div> 
 
                         <!-- Search By Year -->
-                        {{-- <div class="col-sm-4">
+
+                        <div class="col-sm-4
                             <div class="card">
                                 <div class="card-body">
 
-                                    <form action="{{ route('search.by.year') }}" method="post">
+                                    <form action="{{ route('search.all.by.year') }}" method="post">
                                         @csrf
 
                                         <h4>Search By Year</h4>
@@ -112,7 +113,7 @@
 
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
 

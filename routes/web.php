@@ -153,6 +153,9 @@ Route::controller(PatientReportController::class)->group(function () {
 Route::controller(AllReportController::class)->group(function () {
     Route::get('/all/report', 'AllReport')->name('all.report');
     Route::post('/search/bydate', 'SearchAllByDate')->name('search.all.by.date');
+    Route::post('/search/month', 'SearchAllByMonth')->name('search.all.by.month');
+    Route::post('/search/year', 'SearchAllByYear')->name('search.all.by.year');
+
    
 
 });

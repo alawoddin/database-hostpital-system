@@ -3,11 +3,11 @@
 
 <div class="app-body">
 
-    
-
-    @isset($date)
+    @isset($month)
 
     @php
+        $monthName = date('F', mktime(0, 0, 0, $month, 1));
+
         $totalRecords =
             $icu->count()
             + $opd->count()
@@ -27,28 +27,28 @@
             + $eeg->sum('price');
     @endphp
 
-    <div class="card">
+    <div class="card shadow-sm">
         <div class="card-header">
-            <h5>
-                Monthly Report — {{ $date->format('F Y') }}
-            </h5>
+            <h5>Report For Month: {{ $monthName }}</h5>
         </div>
 
         <div class="card-body">
 
             @if($totalRecords == 0)
 
-                <div class="text-center" style="padding:50px; color:gray;">
-                    <i class="bi bi-calendar-x" style="font-size:45px;"></i>
+                {{-- EMPTY STATE --}}
+                <div class="text-center" style="padding:60px; color:gray;">
+                    <i class="bi bi-calendar-x" style="font-size:50px;"></i>
                     <h5 class="mt-3">No Records Found</h5>
-                    <div>No data registered for this month</div>
+                    <div>No visits were registered for this month</div>
                 </div>
 
             @else
 
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
+                {{-- REPORT TABLE --}}
+                <table class="table table-bordered table-hover align-middle">
+                    <thead style="background:#f8f9fc;">
+                        <tr>to now not 
                             <th>Department</th>
                             <th>Total Records</th>
                             <th>Total Revenue</th>
@@ -56,6 +56,7 @@
                     </thead>
 
                     <tbody>
+
                         <tr>
                             <td>ICU</td>
                             <td>{{ $icu->count() }}</td>
@@ -98,13 +99,15 @@
                             <td>{{ number_format($eeg->sum('price'), 2) }}</td>
                         </tr>
 
-                        <tr style="font-weight:bold; background:#f8f9fc;">
+                        {{-- TOTAL ROW --}}
+                        <tr style="font-weight:bold; background:#f8f9fc; font-size:16px;">
                             <td>Total</td>
                             <td>{{ $totalRecords }}</td>
                             <td style="color:#4e73df;">
                                 {{ number_format($totalRevenue, 2) }}
                             </td>
                         </tr>
+
                     </tbody>
                 </table>
 
