@@ -6,6 +6,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EEGController;
 use App\Http\Controllers\ICUController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\OPDController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PatientReportController;
@@ -156,6 +157,7 @@ Route::controller(AllReportController::class)->group(function () {
     Route::post('/search/month', 'SearchAllByMonth')->name('search.all.by.month');
     Route::post('/search/year', 'SearchAllByYear')->name('search.all.by.year');
 
-   
-
 });
+
+Route::get('/license', [LicenseController::class, 'index']);
+Route::post('/license', [LicenseController::class, 'activate']);
